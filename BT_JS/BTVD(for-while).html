@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- nhap mot so n . tinh tong tu 1 den n  -->
+    <p> Chon so n: </p>
+    <input type="number" id="Son">
+    <button onclick="code()">TINH</button>
+    <p>Tong tu 1 den <span id="sonhienthi">...</span> la: <span id="tong">...</span></p>
+
+    <script>
+        function code() {
+            let n = (document.getElementById("Son").value);
+            document.getElementById("sonhienthi").innerHTML = n;
+            let tong = 0;
+
+            // n = parseFloat(n);
+            for (let i = 1; i <= n;) {
+                tong = tong + i;
+                document.getElementById("tong").innerHTML = tong;
+                i = i + 1;
+                console.log(i);
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

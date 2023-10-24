@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chu Vi va Dien Tich hinh chu nhat </title>
+</head>
+
+<body>
+    <h1>Tính chu vi - diện tích hình chữ nhật </h1>
+
+    <p> Nhập chiều dài-chiều rộng hình chữ nhật:
+        <input type="number" id="chieudai">
+        <input type="number" id="chieurong">
+        <button onclick="hamxulicode()"> TÍNH </button>
+    </p>
+
+    <p>Chiều dài là:<span id="dhienthi"> </span> </p>
+
+    <p>Chiều rộng là:<span id="rhienthi"> </span> </p>
+
+    <p>Chu vi hình chữ nhật bằng: <span id="chuvihienthi"></span></p>
+
+    <p> Diện tích hình chữ nhật là: <span id="dientichhienthi"> </span></p>
+
+    <script>
+        document.write("<hr")
+
+        function hamxulicode() {
+            let r = document.getElementById("chieurong").value;
+            document.getElementById("rhienthi").innerHTML = r;
+
+            let d = document.getElementById("chieudai").value;
+            document.getElementById("dhienthi").innerHTML = d;
+
+            // Parse the input values as numbers
+            r = parseFloat(r);
+            d = parseFloat(d);
+
+            let chuvi = (d + r) * 2;
+            let dientich = d * r;
+
+            document.getElementById("chuvihienthi").innerHTML = chuvi;
+            document.getElementById("dientichhienthi").innerHTML = dientich;
+
+        }
+
+    </script>
+
+
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

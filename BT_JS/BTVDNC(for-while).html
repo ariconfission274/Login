@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Bài 2:  -->
+    <p> Nhập câu thần chú đi nèooo: </p>
+    <input name=" magic words" type=" invocation " placeholder="magic words" id="password">
+    <button onclick="words()"> NHẬP </button>
+
+    <script>
+        var password = "Vừng ơi mở raaa!";
+        function words() {
+
+            var input_password = document.getElementById('password').value;
+            // console.log('password:', input_password);
+
+            do {
+                if (password == input_password) {
+                    alert("Cửa mở thành công");
+                } else if (password != input_password) {
+                    alert(" Hãy nhập lại câu thần chú đê =))");
+                    break;
+                }
+            } while (password != input_password);
+            document.getElementById('password').value = "";
+            document.getElementById('password').autofocus;
+        }
+
+
+
+        // var input_password = document.getElementById('password').value;
+        // console.log('password:', input_password);
+
+
+        // while (password != input_password) {
+        //     alert(" Hãy nhập lại câu thần chú đê =))");
+        //     var input_password = prompt("Nhập câu thần chú đi nèooo:");
+        //     console.log('password:', input_password);
+        //     alert("Cửa mở thành công");
+        // }
+
+
+    </script>
+</body>
+
+</html>

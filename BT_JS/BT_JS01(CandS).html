@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C and S cua Hinh Tron</title>
+</head>
+
+<body>
+    <h1>Tính chu vi - diện tích hình tròn </h1>
+
+    <p> Nhập bán kính hình tròn:
+        <input type="number" id="bankinh">
+        <button onclick="hamxulicode()"> TÍNH </button>
+    </p>
+
+    <p>Kết quả tính toán khi bán kính bằng <span id="Rhienthi"> </span> là: </p>
+
+    <p>Chu vi hình tròn bằng: <span id="chuvihienthi"></span></p>
+
+    <p> Diện tích hình tròn là: <span id="dientichhienthi"> </span></p>
+
+    <script>
+        document.write("<hr")
+
+        function hamxulicode() {
+            let r = document.getElementById("bankinh").value;
+            document.getElementById("Rhienthi").innerHTML = r;
+            let chuvi = 2 * 3.14 * r;
+            let dientich = 3.14 * r * r;
+            document.getElementById("chuvihienthi").innerHTML = chuvi;
+            document.getElementById("dientichhienthi").innerHTML = dientich;
+
+        }
+
+    </script>
+</body>
+
+</html>
