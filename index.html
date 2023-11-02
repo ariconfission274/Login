@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+    <style>
+        * {
+
+            background: linear-gradient(to left, #333, #525151 50%, #fff, #1f1f1f);
+        }
+
+
+
+        body {
+            display: flex;
+            font-size: 2rem;
+
+        }
+
+        .clock {
+            border: 20px solid rgb(181, 214, 232);
+            width: 30rem;
+            height: 30rem;
+            border-radius: 50%;
+            margin: 50px auto;
+            position: relative;
+            padding: 2rem;
+            box-shadow:
+                0 0 0px 4px rgba(0, 0, 0, 0.1),
+                inset 0 0 0 3px #000000;
+                inset 0 0 10px black;
+                0 0 10px rgba(0, 0, 0, .2);
+        }
+
+
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#62d9f1, #896adf);
+            /* background-color: rgb(219, 189, 248); */
+            border-radius: 50%;
+            transform: translateY(-3px);
+        }
+
+
+
+        .hand {
+            background: linear-gradient(0.25turn, #8248bc, #ebf8e1, #f180a4);
+            width: 50%;
+            height: 6px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            /* per ruotare dall'estremo destro invece che dal centro (come di default) */
+            transform-origin: 100%;
+            transform: rotate(90deg);
+            transition: all 0.05s;
+            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+
+        }
+
+        .second-hand {
+            position: relative;
+            background: linear-gradient(rgb(57, 140, 234), rgb(86, 113, 134), rgb(170, 122, 236) );
+            height: 3px;
+            width: 30%;
+            left: 20%;
+        }
+
+        .min-hand {
+            
+            height: 4px;
+            width: 40%;
+            left: 10%;
+        }
+
+        .hour-hand {
+            position:absolute;
+            height: 6px;
+            width: 25%;
+            left: 25%;
+        }
+
+        #number {
+            background: none;
+            position:absolute;
+            left: 46%;
+            bottom: 85%;
+        }
+
+        #number1 {
+            background: none;
+            position:relative;
+            top: 40%;
+            left: 90%;
+        }
+
+
+        #number2{
+            background: none;
+            position:relative;
+            top: 70%;
+            left: 49%;
+        }
+
+        #number3 {
+            background: none;
+            position:relative;
+            top: 10%;
+            left:2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="clock-face">
+            <div class=" hand hour-hand"></div>
+            <div class=" hand min-hand"></div>
+            <div class="hand second-hand"></div>
+            <p id="number"> 2π </p>
+            <p id="number1">π/2</p>
+            <p id="number2">π</p>
+            <p id="number3">3π/2</p>
+        </div>
+    </div>
+    <script>
+        const secondHand = document.querySelector('.second-hand');
+        const minuteHand = document.querySelector('.min-hand');
+        const hourHand = document.querySelector('.hour-hand');
+
+        function setDate() {
+            const now = new Date();
+            const offset = 90;
+            const seconds = now.getSeconds();
+            const secondsDegrees = ((360 / 60) * seconds) + offset;
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+            const minutes = now.getMinutes();
+            const minutesDegrees = ((360 / 60) * minutes) + offset;
+            minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+
+            const hours = now.getHours();
+            const hoursDegrees = ((360 / 12) * (hours % 12)) + offset;
+            hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+
+        }
+        setInterval(setDate, 1000);
+    </script>
+
+</body>
+
+</html>
